@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: centos7
-        image: quay.io/de_zhao_liu_ibm/tool:centos7
+        image: quay.io/de_zhao_liu_ibm/tool:python3
         command: ["sleep"]
         args: ["9999999"]
