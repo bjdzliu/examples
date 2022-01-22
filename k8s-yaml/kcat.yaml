@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kcat-deployment
+  labels:
+    app: kcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kcat
+  template:
+    metadata:
+      labels:
+        app: kcat
+    spec:
+      containers:
+      - name:  kcat
+        image: edenhill/kafkacat:1.6.0
+        command: ["sleep"]
+        args: ["99999999"]
