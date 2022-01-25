@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  name: consolecenter
+  namespace: confluent
+spec:
+  to:
+    kind: Service
+    name: controlcenter
+    weight: 100
+  port:
+    targetPort: external
+  wildcardPolicy: None
