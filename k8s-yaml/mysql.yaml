@@ -21,3 +21,17 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "123456"
+---
+apiVersion: v1
+kind: Service
+  name: mysql
+  namespace: default
+spec:
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysql
+  sessionAffinity: None
+  type: ClusterIP
