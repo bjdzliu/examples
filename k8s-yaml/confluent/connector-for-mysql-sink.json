@@ -1,0 +1,13 @@
+{
+    "connector.class"                    : "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url"                     : "jdbc:mysql://mysql.default:3306/demo",
+    "topics"                             : "SOME_JSON_AS_AVRO",
+    "key.converter"                      : "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter"                    : "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schemaregistry.confluent.svc.cluster.local:8081",
+    "connection.user"                    : "connect_user",
+    "connection.password"                : "asgard",
+    "auto.create"                        : true,
+    "auto.evolve"                        : true,
+    "insert.mode"                        : "insert"
+}
