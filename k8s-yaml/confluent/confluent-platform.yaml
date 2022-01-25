@@ -34,11 +34,13 @@ metadata:
 spec:
   replicas: 1
   image:
-    application: confluentinc/cp-server-connect:7.0.1
+    application: quay.io/de_zhao_liu_ibm/connect:7.0.16
     init: confluentinc/confluent-init-container:2.2.0-1
   dependencies:
     kafka:
       bootstrapEndpoint: kafka:9071
+    schemaRegistry:
+      url: http://schemaregistry.confluent.svc.cluster.local:8081
 
 ---
 apiVersion: platform.confluent.io/v1beta1
@@ -52,6 +54,11 @@ spec:
     application: confluentinc/cp-ksqldb-server:7.0.1
     init: confluentinc/confluent-init-container:2.2.0-1
   dataVolumeCapacity: 10Gi
+  dependencies:
+    kafka:
+      bootstrapEndpoint: kafka:9071
+    schemaRegistry:
+      url: http://schemaregistry.confluent.svc.cluster.local:8081
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: ControlCenter
