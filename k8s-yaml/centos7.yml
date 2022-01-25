@@ -19,3 +19,4 @@ spec:
         image: quay.io/de_zhao_liu_ibm/tool:python3
         command: ["sleep"]
         args: ["9999999"]
+#centos:centos7.9.2009
