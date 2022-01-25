@@ -1,0 +1,666 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/podIP: 172.30.241.217/32
+    cni.projectcalico.org/podIPs: 172.30.241.217/32
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "",
+          "ips": [
+              "172.30.241.217"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "",
+          "ips": [
+              "172.30.241.217"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    openshift.io/scc: privileged
+    platform.confluent.io/config-revision-hash: h97bf64kg2
+    prometheus.io/port: "7778"
+    prometheus.io/scrape: "true"
+  creationTimestamp: "2022-01-24T03:58:34Z"
+  generateName: connect-
+  labels:
+    app: connect
+    clusterId: confluent
+    confluent-platform: "true"
+    controller-revision-hash: connect-5598d5586c
+    platform.confluent.io/type: connect
+    statefulset.kubernetes.io/pod-name: connect-0
+    type: connect
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:platform.confluent.io/config-revision-hash: {}
+          f:prometheus.io/port: {}
+          f:prometheus.io/scrape: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:clusterId: {}
+          f:confluent-platform: {}
+          f:controller-revision-hash: {}
+          f:platform.confluent.io/type: {}
+          f:statefulset.kubernetes.io/pod-name: {}
+          f:type: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"fc2a20d0-2683-4320-b7d5-48baa98ae5dd"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:affinity: {}
+        f:containers:
+          k:{"name":"connect"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"CAAS_POD_ID"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"HOST_IP"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"POD_IP"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"POD_NAME"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"POD_NAMESPACE"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:tcpSocket:
+                .: {}
+                f:port: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":7203,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":7777,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":7778,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":8083,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+              k:{"containerPort":9083,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:name: {}
+                f:protocol: {}
+            f:readinessProbe:
+              .: {}
+              f:failureThreshold: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:tcpSocket:
+                .: {}
+                f:port: {}
+              f:timeoutSeconds: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/mnt/config"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/config/init"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/config/shared"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/secrets/internal-plain-credential"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/sslcerts"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/opt/confluentinc"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:hostname: {}
+        f:initContainers:
+          .: {}
+          k:{"name":"config-init-container"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"CAAS_POD_ID"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"HOST_IP"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"OPERATOR_CP_TYPE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"POD_IP"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"POD_NAME"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"POD_NAMESPACE"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/mnt/config"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/config/init"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/mnt/config/shared"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext:
+          .: {}
+          f:fsGroup: {}
+          f:runAsNonRoot: {}
+          f:runAsUser: {}
+        f:subdomain: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"cp-operator-scripts"}:
+            .: {}
+            f:emptyDir:
+              .: {}
+              f:medium: {}
+            f:name: {}
+          k:{"name":"in-ssl-connect-pkcs12"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"init-config-volume"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:name: {}
+            f:name: {}
+          k:{"name":"pod-shared-workdir"}:
+            .: {}
+            f:emptyDir:
+              .: {}
+              f:medium: {}
+            f:name: {}
+          k:{"name":"ref-auth-internal-plain-credential"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"shared-config-volume"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:name: {}
+            f:name: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2022-01-24T03:58:34Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:cni.projectcalico.org/podIP: {}
+          f:cni.projectcalico.org/podIPs: {}
+    manager: calico
+    operation: Update
+    time: "2022-01-24T03:58:35Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:k8s.v1.cni.cncf.io/network-status: {}
+          f:k8s.v1.cni.cncf.io/networks-status: {}
+    manager: multus
+    operation: Update
+    time: "2022-01-24T03:58:36Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:initContainerStatuses: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"172.30.241.217"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2022-01-24T03:59:46Z"
+  name: connect-0
+  namespace: confluent
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: connect
+    uid: fc2a20d0-2683-4320-b7d5-48baa98ae5dd
+  resourceVersion: "1843618"
+  selfLink: /api/v1/namespaces/confluent/pods/connect-0
+  uid: 4e645ec1-1668-4c30-9369-e1c921b2081e
+spec:
+  affinity: {}
+  containers:
+  - args:
+    - /mnt/config/connect/bin/run
+    command:
+    - /bin/sh
+    - -xc
+    env:
+    - name: CAAS_POD_ID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: HOST_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.hostIP
+    - name: POD_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.podIP
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    image: confluentinc/cp-server-connect-operator:6.1.0.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 10
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      successThreshold: 1
+      tcpSocket:
+        port: 8083
+      timeoutSeconds: 30
+    name: connect
+    ports:
+    - containerPort: 8083
+      name: external
+      protocol: TCP
+    - containerPort: 9083
+      name: internal
+      protocol: TCP
+    - containerPort: 7203
+      name: jmx
+      protocol: TCP
+    - containerPort: 7777
+      name: jolokia
+      protocol: TCP
+    - containerPort: 7778
+      name: prometheus
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      initialDelaySeconds: 60
+      periodSeconds: 10
+      successThreshold: 1
+      tcpSocket:
+        port: 8083
+      timeoutSeconds: 10
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /opt/confluentinc
+      name: cp-operator-scripts
+    - mountPath: /mnt/sslcerts
+      name: in-ssl-connect-pkcs12
+    - mountPath: /mnt/config/init
+      name: init-config-volume
+    - mountPath: /mnt/config
+      name: pod-shared-workdir
+    - mountPath: /mnt/secrets/internal-plain-credential
+      name: ref-auth-internal-plain-credential
+    - mountPath: /mnt/config/shared
+      name: shared-config-volume
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-mnf2r
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: connect-0
+  imagePullSecrets:
+  - name: default-dockercfg-ct2gm
+  initContainers:
+  - args:
+    - until [ -f /mnt/config/init/template.jsonnet ]; do echo "file not found"; sleep 10s; done; /opt/startup.sh
+    command:
+    - /bin/sh
+    - -xc
+    env:
+    - name: CAAS_POD_ID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: HOST_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.hostIP
+    - name: POD_IP
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.podIP
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: POD_NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: OPERATOR_CP_TYPE
+      value: connect
+    image: confluentinc/cp-init-container-operator:6.1.0.0
+    imagePullPolicy: IfNotPresent
+    name: config-init-container
+    resources:
+      limits:
+        cpu: 500m
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 512Mi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /mnt/config/init
+      name: init-config-volume
+    - mountPath: /mnt/config
+      name: pod-shared-workdir
+    - mountPath: /mnt/config/shared
+      name: shared-config-volume
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-mnf2r
+      readOnly: true
+  nodeName: 10.170.96.135
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+    runAsNonRoot: true
+    runAsUser: 1001
+  serviceAccount: default
+  serviceAccountName: default
+  subdomain: connect
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  volumes:
+  - emptyDir:
+      medium: Memory
+    name: cp-operator-scripts
+  - name: in-ssl-connect-pkcs12
+    secret:
+      defaultMode: 420
+      secretName: connect-pkcs12
+  - configMap:
+      defaultMode: 420
+      name: connect-init-config
+    name: init-config-volume
+  - emptyDir:
+      medium: Memory
+    name: pod-shared-workdir
+  - name: ref-auth-internal-plain-credential
+    secret:
+      defaultMode: 420
+      secretName: internal-plain-credential
+  - configMap:
+      defaultMode: 420
+      name: connect-shared-config
+    name: shared-config-volume
+  - name: default-token-mnf2r
+    secret:
+      defaultMode: 420
+      secretName: default-token-mnf2r
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-01-24T03:58:37Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-01-24T03:59:46Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-01-24T03:59:46Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-01-24T03:58:34Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://fc4128e52e498ea65a949e5b36742d1829b00e1ea895c84783f6bc6e1d8a5389
+    image: docker.io/confluentinc/cp-server-connect-operator:6.1.0.0
+    imageID: docker.io/confluentinc/cp-server-connect-operator@sha256:4f99f4b4378c9e649d1f01704621f2ed44f7c62a2568fdee55a203a0768df473
+    lastState: {}
+    name: connect
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-01-24T03:58:37Z"
+  hostIP: 10.170.96.135
+  initContainerStatuses:
+  - containerID: cri-o://ef46c4f2c2ab11506df052f79a3a6611ae39e5909365933c6ec6910c46d5d05c
+    image: docker.io/confluentinc/cp-init-container-operator:6.1.0.0
+    imageID: docker.io/confluentinc/cp-init-container-operator@sha256:1474b35767a68fcbc4f81a239c62e3fb07bb64bf7c074dcd7be19bc11ae8730b
+    lastState: {}
+    name: config-init-container
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: cri-o://ef46c4f2c2ab11506df052f79a3a6611ae39e5909365933c6ec6910c46d5d05c
+        exitCode: 0
+        finishedAt: "2022-01-24T03:58:36Z"
+        reason: Completed
+        startedAt: "2022-01-24T03:58:36Z"
+  phase: Running
+  podIP: 172.30.241.217
+  podIPs:
+  - ip: 172.30.241.217
+  qosClass: Burstable
+  startTime: "2022-01-24T03:58:34Z"
