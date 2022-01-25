@@ -2,7 +2,7 @@
 ### Rebuild connect docker image
 FILE：Dockerfile  
 在connect image中，增加plugin、jar包的方式:  
-1）准备plugin 、jar包  
+1）准备plugin 、jar包，放到目录 confluentinc-kafka-connect-jdbc   
 2）重新build docker image  
 
 
