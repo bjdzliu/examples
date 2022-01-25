@@ -41,7 +41,6 @@ spec:
       bootstrapEndpoint: kafka:9071
     schemaRegistry:
       url: http://schemaregistry.confluent.svc.cluster.local:8081
-
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: KsqlDB
